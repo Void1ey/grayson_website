@@ -1,0 +1,59 @@
+/* Letter G */
+
+@keyframes g-rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg)}
+}
+
+#letter-G {
+/*	cursor: default;*/
+}
+
+#letter-G:hover {
+/*	transform: rotate(-720deg);*/
+	animation-duration: 0.75s;
+	animation-name: g-rotate;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+
+
+
+/* Letter O */
+
+@property --o-progress {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}	
+#letter-O .gradient {
+	--o-progress: 0deg;
+
+	transform: scale(1, -1);;
+	width: 100%; height: 100%;
+	background-image: conic-gradient(from 90deg, #0000 var(--o-progress), #000F var(--o-progress));
+
+	transition: --o-progress 1s ease;
+}
+
+#letter-O .gradient:hover {
+	--o-progress: 360deg;
+}
+
+#name > #O-border {
+	position: absolute;
+	left: 54%;
+	width: 85px;
+	height: 87px;
+	border: 3px solid #000;
+	box-sizing: border-box;
+	border-radius: 47%;
+	background-color: #0000;
+	z-index: -1;
+}
+
+
+
+
+

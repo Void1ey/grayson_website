@@ -1,0 +1,58 @@
+#letter-a #stand-perspective {
+	overflow: visible;
+	perspective: 90px;
+}
+
+#letter-a #stand {
+	height: 100%;
+	width: 100%;
+	transform-origin: top;
+	transform: rotateX(-110deg);
+	transition: all 0.6s cubic-bezier(0.25, 0.55, 0.4, 0.1) 0.8s;
+}
+
+#letter-a:hover #stand {
+	transition: all 0.4s cubic-bezier(0.66, 1.9, 0.15, 0.35) 0.3s;
+	transform: rotateX(-21.5deg);
+}
+
+#letter-a #middle {
+	width: 44px;
+	transform: translateX(0px);
+	transition: all 0.5s cubic-bezier(0.3, 3, 0.25,-0.2) 1s;
+}
+
+#letter-a:hover #middle {
+	width: 88px;
+	transform: translateX(-22px);
+	transition: all 0.5s cubic-bezier(0.3, 3, 0.25,-0.2);
+}
+
+@keyframes canvasBounceOut {
+	0% {transform: scale(1, 1)}
+	10% {transform: scale(1.2, 0.8)}
+	30% {transform: scale(0.8, 1.2)}
+	70% {transform: scale(1.4, 0.6)}
+	100% {transform: scale(0.6, 1.4)}
+}
+
+#letter-a #canvas {
+	transform-origin: 50% 60%;
+	translate: 0 -60vh;
+	transition: translate 0.4s linear 0.8s;
+
+	perspective: 90px;
+}
+
+#letter-a:hover #canvas {
+	transition: translate 0.6s cubic-bezier(0.75, 1.86, 0, 0.45) 0.6s;
+	translate: 0 0;
+}
+
+#letter-a:not(:hover) #canvas {
+	animation: canvasBounceOut 0.8s ease-in forwards 0.1s;
+}
+
+#letter-a #canvas > * {
+	transform: rotateX(3deg);
+}

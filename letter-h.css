@@ -1,0 +1,150 @@
+@keyframes easeOutBounce {
+/*	0% {transform: translateY(0%);}*/
+/*	12% {transform: translateY(10.89%);}*/
+/*	24% {transform: translateY(43.56%);}*/
+/*	36% {transform: translateY(98.01%);}*/
+/*	54% {transform: translateY(75.02%);}*/
+/*	74% {transform: translateY(98.37%);}*/
+/*	82% {transform: translateY(93.75%);}*/
+/*	92% {transform: translateY(99.34%);}*/
+/*	96% {transform: translateY(98.46%);}*/
+/*	100% {transform: translateY(100%);}*/
+
+/*	V2*/
+	0% {transform: rotate(0deg) translateY(0px)}
+	10% {transform: rotate(2.7deg) translateY(-0.48px)}
+	19% {transform: rotate(5.85deg) translateY(-1.04px)}
+	26% {transform: rotate(10.8deg) translateY(-1.92px)}
+	30% {transform: rotate(18deg) translateY(-3.2px)}
+	33% {transform: rotate(25.65deg) translateY(-4.56px)}
+	36% {transform: rotate(34.2deg) translateY(-6.08px)}
+	37% {transform: rotate(39.6deg) translateY(-7.04px)}
+	38% {transform: rotate(45deg) translateY(-8px)}
+	40% {transform: rotate(39.6deg) translateY(-7.04px)}
+	43% {transform: rotate(36.9deg) translateY(-6.56px)}
+	47% {transform: rotate(34.65deg) translateY(-6.16px)}
+	51% {transform: rotate(33.75deg) translateY(-6px)}
+	56% {transform: rotate(34.65deg) translateY(-6.16px)}
+	60% {transform: rotate(36.45deg) translateY(-6.48px)}
+	63% {transform: rotate(39.15deg) translateY(-6.96px)}
+	65% {transform: rotate(45deg) translateY(-8px)}
+	69% {transform: rotate(40.5deg) translateY(-7.2px)}
+	73% {transform: rotate(39.15deg) translateY(-6.96px)}
+	77% {transform: rotate(40.5deg) translateY(-7.2px)}
+	81% {transform: rotate(45deg) translateY(-8px)}
+	90% {transform: rotate(45deg) translateY(-8px)}
+	95% {transform: rotate(44.1deg) translateY(-7.84px)}
+	100% {transform: rotate(45deg) translateY(-8px)}
+}
+
+@keyframes undo {
+	from {transform: rotate(45deg) translateY(-8px)}
+	to {transform: rotate(0deg) translateY(0px)}
+}
+
+#letter-h #top-left {
+	transform: rotate(0deg) translateY(0px);
+	transform-origin: 13px 44px;
+	transition: transform 1.2s cubic-bezier(0.25, 0.6, 0.9, 0.1) 0.1s;
+/*	animation: undo 1s*/
+}
+#letter-h:hover #top-left {
+	transition: transform 0.5s cubic-bezier(0.6, 1.65, 0.12, 0.35) 0.1s;
+	transform: rotate(45deg) translateY(-8px);
+/*	animation: easeOutBounce 1s forwards;*/
+}
+
+#letter-h #top-right {
+	transform: rotate(0deg) translateY(0px);
+	transform-origin: 87% 44%;
+	transition: transform 1.3s cubic-bezier(0.5, 0.8, 0.8, 0.3) 0.2s;
+}
+#letter-h:hover #top-right {
+	transition: transform 0.5s cubic-bezier(0.6, 1.65, 0.12, 0.75);
+	transform: rotate(-45deg) translateY(-8px);
+}
+
+#letter-h #door-perspective {
+	overflow: visible;
+	perspective: 100px;
+}
+
+#letter-h #door {
+	height: 100%;
+	width: 100%;
+	border-radius: 3px;
+	background: #000; 
+	transform-origin: right;
+/*	transform-style: preserve-3d;*/
+	transform: rotateY(264.3deg);
+	transition: all 0.5s cubic-bezier(0.5, -0.5, 0.7, 0) 0.9s;
+}
+
+#letter-h:hover #door {
+	transition: all 0.5s cubic-bezier(0.4, 1.7, 0.3, 0.5) 0.5s;
+	transform: rotateY(360deg);
+}
+
+/* Door handle */
+#letter-h #door::before {
+	content: "";
+	position: absolute;
+	width: 15%;
+	aspect-ratio: 1/1;
+	top: 55%;
+	left: 15%;
+	border-radius: 100%;
+	background-color: var(--mainColor);
+}
+
+/* Breathing animation*/
+@keyframes windowBreathing {
+	0% {background-color: #db3; filter: blur(0.2px);*/}
+	50% {background-color: #FE4; filter: blur(0.4px);*/}
+	100% {background-color: #db3; filter: blur(0.2px);*/}
+}
+
+/* Door window */
+#letter-h #door::after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	aspect-ratio: 1/1;
+	border-radius: 1px;
+	top: 12%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	filter: blur(0px);
+	background-color: var(--mainColor);
+
+	background-image: linear-gradient(to bottom, #0000 26.67%, 
+		#000F 26.67%,
+		#000F 36.67%,
+		#0000 36.67%,
+		#0000 63.33%,
+		#000F 63.33%,  
+		#000F 73.33%,  
+		#0000 73.33%),
+
+	linear-gradient(to right, #0000 45%, 
+		#000F 45%, 
+		#000F 55%,  
+		#0000 55%);
+}
+
+
+#letter-h:hover #door::after {
+	animation: flash 0.25s cubic-bezier(0.25, 2.9, 0.6, -1.75) 1.6s, windowBreathing 4s linear 1.6s infinite;
+}
+
+#letter-h #chimney {
+	translate: 0% 100%;
+	transition: all 0.3s cubic-bezier(0.5,-0.5, 1, 1);
+}
+
+#letter-h:hover #chimney {
+	transition: all 0.5s cubic-bezier(0.6, 1.65, 0.12, 0.75) 0.6s;
+	translate: 0% 25%;
+}
+

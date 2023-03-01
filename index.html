@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Grayson Homepage</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Poppins:wght@900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="letters.css">
+	<link rel="stylesheet" href="letter-a.css">
+	<link rel="stylesheet" href="letter-h.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<style type="text/css">
+
+
+		:root {
+			--mainColor: #232f50;
+		}
+
+		body {
+			background-color: #081438;
+			background-color: var(--mainColor);
+			margin: 0;
+			padding: 0;
+		}
+
+
+		/* Mobile */
+		@media (pointer:none), (pointer:coarse) {
+			body {
+				display: none;
+			}
+		}
+
+		#navWords {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#wordEndings {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+			justify-content: center;
+
+			overflow: hidden;
+			perspective: 800px;
+		}
+
+
+		@keyframes typing {
+/*		  from { height: 0 }*/
+/*		  to { height: 100% }*/
+			from { bottom: 550px }
+			to { bottom: 0px }
+		}
+
+		.vericaltext {
+			position: relative;
+/*			bottom: 550px;*/
+/*			height: 0;*/
+
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+
+			font-family: 'Inter', sans-serif;
+			letter-spacing: -0.3em;
+			font-size: 66px;
+
+			padding-left: 10px;
+			padding-right: 10px;
+			margin: 0;
+			user-select: none;
+			transition: all 1s;
+			transition: all 1s cubic-bezier(0.35, 2.1, 0.45, 0.6);
+/*			transform: translateY(-110%);*/
+			transform-origin: top;
+			transform: rotateX(-110deg);
+		}
+
+		.vericaltext.writing {
+/*			animation: typing 1s steps(14, end) forwards;*/
+/*			transform: translateY(0);*/
+			transform: rotateX(0deg);
+/*			bottom: 0px;*/
+		}
+
+		#name {
+			/*position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);*/
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#name > svg {
+			font-family: 'Questrial', sans-serif;
+			overflow: visible;
+/*			cursor: none;*/
+/*			opacity: 1;*/
+/*			transform: scale(1);*/
+			transform-origin: center;
+			transition: all 0.1s;
+		}
+/*
+		#name > svg:hover {
+			transform: scale(1.1);
+		}*/
+
+/*
+		#name:hover > svg {
+			opacity: 0.3;
+		}*/
+
+/*		#name > svg:hover {*/
+/*			opacity: 1;*/
+/*			animation: pulse 0.2s;*/
+/*		}*/
+
+		#letter-r #leg-perspective {
+			overflow: visible;
+			perspective: 100px;
+		}
+
+		#letter-r #leg {
+			transform-origin: bottom;
+			transform: rotateX(0deg);
+			transition: all 1s cubic-bezier(1, 0, 0.9, 0.9);
+		}
+
+		#letter-r:hover #leg {
+			transform: rotateX(105.65deg);
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="navWords">
+	<div id="name">
+
+		<!-- Letter G -->
+		<svg width="100px" height="100px" font-size="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#000" id="letter-G">
+			<text x="0" y="0.875em" fill="#000">G</text>
+		</svg>
+
+		<!-- Letter R -->
+		<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" id="letter-r">
+			<path id="left-side" d="M13 6C13 2.68629 15.6863 0 19 0V0C22.3137 0 25 2.68629 25 6V94C25 97.3137 22.3137 100 19 100V100C15.6863 100 13 97.3137 13 94V6Z" fill="black"/>
+			<path id="curve" d="M19 6L59 6C71.1503 6 81 15.8497 81 28V28C81 40.1503 71.1503 50 59 50H19" stroke="black" stroke-width="12" stroke-linecap="round"/>
+			<foreignObject x="45" y="44" width="42" height="56" id="leg-perspective">
+				<svg width="42" height="56" id="leg">
+					<!-- <path id="leg" d="M51 50L81 94" stroke="black" stroke-width="12" stroke-linecap="round"/> -->
+					<path d="M6 6L36 50" stroke="black" stroke-width="12" stroke-linecap="round"/>
+				</svg>
+			</foreignObject>
+		</svg>
+
+
+		<!-- Letter A -->
+		<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" id="letter-a">
+			<foreignObject x="44" y="4" width="12" height="122" id="stand-perspective">
+				<svg id="stand">
+					<rect width="100%" height="100%" rx="5" fill="black"/>
+				</svg>
+			</foreignObject>
+			<rect id="middle" x="28" y="56" width="44" height="12" rx="6" fill="black"/>
+			<path id="frame" d="M19 94L50 6L81 94" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+			<foreignObject x="10" y="6" width="100" height="50" id="canvas">
+				<svg width="80" height="50">
+					<!-- Background -->
+					<rect width="80" height="50" rx="3" fill="#DDD"/>
+
+					<!-- Canvas content -->
+					<svg x="10" y="6">
+					<!-- 1st circle -->
+					<circle cx="6" cy="4.25" r="4.25" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- 2nd circle -->
+					<circle cx="14.5" cy="6.25" r="4.25" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- 3rd circle -->
+					<ellipse cx="20" cy="13.5" rx="4.25" ry="5" transform="rotate(-19 20 13.5)" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- 4th circle -->
+					<ellipse cx="25" cy="28" rx="4" ry="7.5" transform="rotate(-7.5 25 28)" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- 5th circle-->
+					<ellipse cx="28" cy="38" rx="5.7" ry="2.5" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- 6th circle -->
+					<ellipse cx="4.25" cy="5.3" rx="4.25" ry="5.3" transform="matrix(-1 -0.3 -0.3 1 37.8 25)" fill="#EEE" fill-opacity="0.5" stroke="black" stroke-opacity="0.5" stroke-width="0.25"/>
+					<!-- Path -->
+					<path opacity="0.5" d="M1 4.25582C19.4419 3.90116 22.9884 12.0581 27.5988 39.3663C27.5988 39.3663 31.8547 22.6977 37.8837 18.0872" stroke="black" stroke-width="0.5" stroke-linecap="round" stroke-dasharray="2 1"/>
+					<!-- Final circle -->
+					<path d="M40.7921 19.8158C39.5464 22.191 36.7581 23.1655 34.5718 22.019C32.3855 20.8724 31.6018 18.0245 32.8474 15.6493C34.0931 13.2741 36.8815 12.2996 39.0677 13.4462C41.254 14.5927 42.0377 17.4406 40.7921 19.8158Z" fill="#0A89A5" stroke="black" stroke-width="0.25"/>
+					<!-- Ground -->
+					<path d="M0 41 H60" stroke="black" stroke-opacity="0.75" stroke-width="0.5" stroke-linecap="round"/>
+					</svg>
+				</svg>
+			</foreignObject>
+		</svg>
+
+		<!-- Letter Y -->
+		<svg width="100px" height="100px" font-size="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#000" id="letter-y">
+			<text x="0" y="0.875em" fill="#000">Y</text>
+		</svg>
+
+		<!-- Letter S -->
+		<svg width="100px" height="100px" font-size="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#000" id="letter-s">
+			<text x="0" y="0.875em" fill="#000">S</text>
+		</svg>
+
+
+		<!-- Letter O -->
+		<svg width="100px" height="100px" font-size="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#000" id="letter-O">
+	 		<clipPath id="clip">
+				<!-- <path d="m0.66667,62.5c-0.05556,-16.38889 6.72221,-61.94444 58.16666,-62c43.94444,-0.11111 58.22223,34.44446 56.83334,51.83334l-36.06934,0.16732c-8.44885,-37.48044 -44.22624,-20.8114 -43.30269,14.05867c0.92354,34.87007 35.00114,41.03179 43.75543,14.97737l-27.90385,0.18047l-0.64622,-28.77523l63.91667,0.11238l-0.04166,73.30619l-30.68751,-0.01358l-0.09375,-4.75679c-22.73786,11.86584 -50.34785,5.75836 -65.71362,-8.26215c-15.36577,-14.02051 -18.48733,-35.25228 -18.21346,-50.82799z"/> -->
+				<text x="0" y="0.875em" fill="#000">O</text>
+			</clipPath>
+
+			<foreignObject x="0" y="0" width="100%" height="100%" clip-path="url(#clip)">
+				<div class="gradient"></div>
+			</foreignObject>
+			<!-- <div style="position: absolute;left: 54%;width: 85px; height: 85px;border-radius: 45%;background-color: #000; z-index: -1;">
+				<div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); width: 93%; height: 95%; border-radius:45%; background-color: #FFF;"></div>
+			</div> -->
+		</svg>
+
+		<!-- Letter N -->
+		<svg width="100px" height="100px" font-size="100" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#000" id="letter-n">
+			<text x="0" y="0.875em" fill="#000">N</text>
+		</svg>
+		<!-- Space -->
+		<div style="width:100px; height:100px;"></div>
+
+
+		<!-- Letter H -->
+		<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" id="letter-h">
+			<path id="top-left" d="M13 6C13 2.68629 15.6863 0 19 0V0C22.3137 0 25 2.68629 25 6V57L18.1213 63.8787C16.2314 65.7686 13 64.4301 13 61.7574V6Z" fill="black"/>
+			<path id="top-right" d="M75 6C75 2.68629 77.6863 0 81 0V0C84.3137 0 87 2.68629 87 6V61.7574C87 64.4301 83.7686 65.7686 81.8787 63.8787L75 57V6Z" fill="black"/>
+			<rect id="middle" x="13" y="44" width="74" height="12" fill="black"/>
+			<rect id="bottom-left" x="13" y="44" width="12" height="56" rx="6" fill="black"/>
+			<rect id="bottom-right" x="75" y="44" width="12" height="56" rx="6" fill="black"/>
+			<foreignObject x="40" y="70" width="20" height="28" id="door-perspective">
+				<div id="door"></div>
+			</foreignObject>
+			<svg x="18" y="0" height="37">
+				<path id="chimney" d="M1.10046 4.92055C-0.527858 2.96657 0.861612 0 3.40513 0H12.5949C15.1384 0 16.5279 2.96657 14.8995 4.92055L14 6V23.7574C14 24.553 13.6839 25.3161 13.1213 25.8787L7.12132 31.8787C5.23143 33.7686 2 32.4301 2 29.7574V6L1.10046 4.92055Z" fill="black"/>
+			</svg>
+		</svg>
+
+
+	</div>
+
+	<div id="wordEndings">
+		<h1 class="vericaltext">RAYSON</h1>
+		<h1 class="vericaltext">ROJECTS</h1>
+		<h1 class="vericaltext">NIMATIONS</h1>
+		<h1 class="vericaltext">ELLO</h1>
+		<h1 class="vericaltext">CHOOL WORK</h1>
+		<h1 class="vericaltext">THER</h1>
+		<h1 class="vericaltext">O</h1>
+		<div style="width:100px; height:100px;"></div>
+		<h1 class="vericaltext">OME</h1>
+	</div>
+
+	</div>
+
+
+
+
+
+	<!-- Original G -->
+	<!-- <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" stroke-width="8" stroke="#000000" fill="none" stroke-linecap="square" stroke-linejoin="miter">
+	  <path d="M20 11 a8 8 0 1 0 -.5 4 m 0.5 5 v-5h-5"/>
+	</svg> -->
+
+	<script src="main.js"></script>
+</body>
+</html>
+
+
+
